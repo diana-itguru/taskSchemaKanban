@@ -1,0 +1,54 @@
+@WebApplication1_HostAddress = http://localhost:5113
+
+GET {{WebApplication1_HostAddress}}/weatherforecast/
+Accept: application/json
+
+### Получить все задачи
+GET {{WebApplication1_HostAddress}}/api/tasks
+Accept: application/json
+
+###
+
+### Создать задачу
+POST {{WebApplication1_HostAddress}}/api/tasks
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Первая задача",
+  "description": "Проверка CRUD",
+  "status": "ToDo"
+}
+
+###
+
+### Получить задачу по id
+GET {{WebApplication1_HostAddress}}/api/tasks/036c5ad9-95c2-4993-ab44-e535129b13b9
+Accept: application/json
+
+###
+
+### Обновить задачу
+PUT {{WebApplication1_HostAddress}}/api/tasks
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": "036c5ad9-95c2-4993-ab44-e535129b13b9",
+  "title": "Обновлённая задача",
+  "description": "Новое описание",
+  "status": "Done"
+}
+
+###
+
+### Удалить задачу
+DELETE {{WebApplication1_HostAddress}}/api/tasks/036c5ad9-95c2-4993-ab44-e535129b13b9
+Accept: application/json
+
+###
+GET {{WebApplication1_HostAddress}}/api/tasks?status=Done
+Accept: application/json
+###
+
+
